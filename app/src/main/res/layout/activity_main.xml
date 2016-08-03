@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/spacing_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Joke of the day"
+        android:text="Joke of the moment"
         android:textColor="@color/textColor"
         android:textSize="18sp"/>
 
