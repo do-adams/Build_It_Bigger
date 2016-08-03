@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Build It Bigger</string>
+    <string name="ad_mob_app_id">ca-app-pub-3404940303849930~4570418807</string>
     <string name="banner_ad_unit_id">ca-app-pub-3404940303849930/7523885204</string>
 </resources>
