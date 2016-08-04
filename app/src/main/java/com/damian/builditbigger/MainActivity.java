@@ -2,6 +2,8 @@ package com.damian.builditbigger;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         mJokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (IS_EMULATOR) { // because we can't afford Google App Engine ':(
+                if (IS_EMULATOR && isNetworkAvailable()) { // because we can't afford Google App Engine ':(
                     new EndpointsAsyncTask().execute(MainActivity.this);
                 } else { // grabs the joke locally instead
                     startJokeActivity(new FreshJoke().chuckNorris());
@@ -73,6 +75,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         mJokeTextView.setText(new FreshJoke().chuckNorris()); // kill them with jokes!
+    }
+
+    /**
+     * Checks to ensure the user can connect to the network,
+     * as per Google's Android Developer guidelines.
+     */
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+
+        //This method requires permission ACCESS_NETWORK_STATE
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()) {
+            //Checks if a network is present and connected
+            isAvailable = true;
+        }
+        return isAvailable;
     }
 
     private void startJokeActivity(String joke) {
