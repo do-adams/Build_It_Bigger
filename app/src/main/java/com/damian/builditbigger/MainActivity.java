@@ -47,6 +47,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mJokeTextView.setText(new FreshJoke().chuckNorris());
+        mJokeTextView.setText(new FreshJoke().chuckNorris()); // kill them with jokes!
     }
 }

@@ -21,7 +21,7 @@ public class FreshJoke {
 
         try {
             InputStream inputStream = this.getClass()
-                    .getResourceAsStream(filePath);
+                    .getResourceAsStream(filePath); // Gradle re-directs to resources folder
 
             if (inputStream == null) {
                 System.out.println("Input stream is null");
