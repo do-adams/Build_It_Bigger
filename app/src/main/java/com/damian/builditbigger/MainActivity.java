@@ -1,5 +1,6 @@
 package com.damian.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.damian.freshjokes.FreshJoke;
+import com.damian.jokedisplay.JokeActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -39,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         mJokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mJokeTextView.setText(new FreshJoke().chuckNorris());
+                Intent intent = new Intent(MainActivity.this, JokeActivity.class);
+                intent.putExtra(JokeActivity.JOKE_KEY, new FreshJoke().chuckNorris());
+                startActivity(intent);
             }
         });
     }
