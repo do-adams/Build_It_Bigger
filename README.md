@@ -15,8 +15,8 @@ I built this project as a requirement for completing the [Gradle for Android and
 
 To begin running this project, you will definitely want to follow the steps in Google's [Ad Mob documentation](https://firebase.google.com/docs/admob/android/quick-start). 
 
-Firstly, you will need three different google-services.json files for the main, free, and paid versions of the app, which must be placed in the root of the app, free, and paid directories.
+Firstly, you will need three different 'google-services.json' files for the main, free, and paid versions of the app, which must be placed in the root of the app, free, and paid directories.
 
-Secondly, you will need your own app and banner ad unit ids for configuring the ad in the main activity. They are located in the strings.xml resource file. When you obtain these, also make sure to get your unique test device id and use it to overwrite the value used in the code.
+Secondly, you will need your own app and banner ad unit ids for configuring the ad in the main activity. They are located in the 'strings.xml' resource file. When you obtain these, also make sure to get your unique test device id and use it to overwrite the value used in the code.
 
 Finally, you will want to make sure you run the backend module configuration for the Google Cloud Endpoints functionality. For best results, this should be run in conjunction with the Android emulator and not a test device. More details are available in the code and [here](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints).
