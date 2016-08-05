@@ -19,7 +19,6 @@ import com.damian.jokedisplay.JokeActivity;
 
 public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.GCECallback {
     private static String TAG = MainActivity.class.getSimpleName();
-    private static String TEST_DEVICE_ID_AD_MOB = "7FDA1E82084FB2DA81E38E52B97C7981";
 
     // If you are running this app on an emulator you will have access to
     // GCE functionality. Set this flag to true and
