@@ -17,6 +17,6 @@ To begin running this project, you will definitely want to follow the steps in G
 
 Firstly, you will need three different 'google-services.json' files for the main, free, and paid versions of the app (all of which have different package names), which must be placed in the root of the app, free, and paid directories.
 
-Secondly, you will need your own app and banner ad unit ids for configuring the ad in the main activity. They are located in the 'strings.xml' resource file. When you obtain these make sure to get your unique test device id and use it to overwrite the value used in the code.
+Secondly, you will need your own app and banner ad unit ids for configuring the ad in the main activity. They are located in the 'strings.xml' resource file. When you obtain these make sure to get your unique test device id and use it to overwrite the values used in the code.
 
-Finally, you will want to make sure you run the backend module configuration for the Google Cloud Endpoints functionality. For best results, this should be run in conjunction with the Android emulator and not a test device. More details are available in the code and [here](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints).
+Finally, you will want to make sure you run the backend module configuration for the Google Cloud Endpoints functionality. For best results, this should be used in conjunction with the Android emulator and not a test device. More details are available in the code and [here](https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints).
