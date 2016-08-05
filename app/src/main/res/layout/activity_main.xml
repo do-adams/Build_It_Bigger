@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/spacing_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:text="Joke of the moment"
+        android:text="@string/header_text"
         android:textColor="@color/textColor"
         android:textSize="18sp"/>
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/jokeColor"
             android:textSize="24sp"
-            tools:text="On the set of Walker Texas Ranger Chuck Norris brought a dying lamb back to life by nuzzling it with his beard. As the onlookers gathered, the lamb sprang to life. Chuck Norris then roundhouse kicked it, killing it instantly. This was just to prove that the good Chuck giveth."/>
+            tools:text="@string/joke_text"/>
     </ScrollView>
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_marginBottom="@dimen/spacing_vertical_margin"
         android:layout_marginTop="@dimen/spacing_vertical_margin"
         android:background="@color/buttonColor"
-        android:text="Tell me another joke"
+        android:text="@string/joke_button_text"
         android:textColor="@color/textColor"/>
 
     <com.google.android.gms.ads.AdView

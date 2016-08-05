@@ -4,4 +4,9 @@
     <!-- IDs for Google Ad Mob -->
     <string name="ad_mob_app_id">ca-app-pub-3404940303849930~4570418807</string>
     <string name="banner_ad_unit_id">ca-app-pub-3404940303849930/7523885204</string>
+
+    <!-- Text for the main layouts -->
+    <string name="header_text">Joke of the moment</string>
+    <string name="joke_text">On the set of Walker Texas Ranger Chuck Norris brought a dying lamb back to life by nuzzling it with his beard. As the onlookers gathered, the lamb sprang to life. Chuck Norris then roundhouse kicked it, killing it instantly. This was just to prove that the good Chuck giveth.</string>
+    <string name="joke_button_text">Tell me another joke</string>
 </resources>
