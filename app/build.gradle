@@ -17,7 +17,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        free {
+            applicationId "com.damian.builditbigger.free"
+        }
+        paid {
+            applicationId "com.damian.builditbigger.paid"
+        }
+    }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
