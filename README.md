@@ -9,7 +9,7 @@ You can completely change the tone and content of the app by introducing your ow
 
 Additionally, I integrated Google's Ad Mob service into the main activity layout, along with free and paid flavors of the app that either do or do not make usage of the ads. Along with these, I produced a unit test for making sure the Google Cloud Endpoints module is working and returning jokes properly when activated.  
 
-I built this project as a requirement for completing the [Gradle for Android and Java](https://www.udacity.com/course/gradle-for-android-and-java--ud867) course at [Udacity](https://www.udacity.com/). For my catalog of jokes, I went with [The Internet Chuck Norris Database's](http://www.icndb.com/) extensive collection of over five-hundred Chuck Norris jokes, so there is definitely plenty of content to power many greasy button taps.
+I built this project during August 2016 as a requirement for completing the [Gradle for Android and Java](https://www.udacity.com/course/gradle-for-android-and-java--ud867) course at [Udacity](https://www.udacity.com/). For my catalog of jokes, I went with [The Internet Chuck Norris Database's](http://www.icndb.com/) extensive collection of over five-hundred Chuck Norris jokes, so there is definitely plenty of content to power many greasy button taps.
 
 #Getting Started
 
