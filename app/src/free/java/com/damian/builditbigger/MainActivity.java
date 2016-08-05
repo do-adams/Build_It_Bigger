@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
     // If you are going to run this app on a device set this flag to false
     // and run the app normally since it will default to a local Java library
     // for the same task.
-    private static boolean IS_EMULATOR = false;
+    private static boolean IS_EMULATOR = true;
 
     AdView mAdView;
     TextView mJokeTextView;
