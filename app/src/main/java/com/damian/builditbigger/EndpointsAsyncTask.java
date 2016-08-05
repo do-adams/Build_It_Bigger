@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2016 Damián Adams
+ */
+
 package com.damian.builditbigger;
 
 import android.os.AsyncTask;
@@ -11,10 +15,16 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 
+/**
+ * Queries the GCE module/server for a fresh joke.
+ */
 public class EndpointsAsyncTask extends AsyncTask<EndpointsAsyncTask.GCECallback, Void, String> {
     private static String TAG = EndpointsAsyncTask.class.getSimpleName();
     private GCECallback mCallbackClass;
 
+    /**
+     * Interface used for executing callbacks on the calling class.
+     */
     public interface GCECallback {
         void onPostExecute(String result);
     }

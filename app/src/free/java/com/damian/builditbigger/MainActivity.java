@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2016 Damián Adams
+ */
+
 package com.damian.builditbigger;
 
 import android.content.Context;
@@ -73,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
         startJokeActivity(result);
     }
 
-
+    /**
+     * Sends the joke through to the JokeActivity of the jokedisplay lib.
+     */
     private void startJokeActivity(String joke) {
         Intent intent = new Intent(this, JokeActivity.class);
         intent.putExtra(JokeActivity.JOKE_KEY, joke);

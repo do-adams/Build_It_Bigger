@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2016 Damián Adams
+ */
+
 package com.damian.builditbigger;
 
 import android.app.Application;

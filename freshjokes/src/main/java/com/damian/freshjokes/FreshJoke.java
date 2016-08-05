@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2016 Damián Adams
+ */
+
 package com.damian.freshjokes;
 
 import java.io.BufferedReader;
@@ -6,6 +10,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+/**
+ * Class in charge of providing fresh, random jokes from an attached plaintext file.
+ */
 public class FreshJoke {
 
     // Chuck Norris jokes provided by The Internet Chuck Norris Database
@@ -15,6 +22,9 @@ public class FreshJoke {
     // the file path matters depending on the way you load the text file (getClassLoader or getClass)
     private static String PATH_OF_CHUCK_JOKES = "/chuckjokes.txt";
 
+    /**
+     * Queries a given plaintext file for a random one-liner.
+     */
     private String getJoke(int numOfJokes, String filePath) {
         int rand = new Random().nextInt(numOfJokes);
         String freshJoke = null;
@@ -40,6 +50,9 @@ public class FreshJoke {
         return freshJoke;
     }
 
+    /**
+     * Returns a random Chuck Norris one-liner.
+     */
     public String chuckNorris() {
         return getJoke(NUM_OF_CHUCK_JOKES, PATH_OF_CHUCK_JOKES);
     }

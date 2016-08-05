@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2016 Damián Adams
+ */
+
 package com.damian.jokedisplay;
 
 import android.content.Intent;
@@ -6,6 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+/**
+ * Activity in charge of displaying a joke, received through a String extra via Intent.
+ */
 public class JokeActivity extends AppCompatActivity {
     private static String TAG = JokeActivity.class.getSimpleName();
     public static String JOKE_KEY = "joke";
