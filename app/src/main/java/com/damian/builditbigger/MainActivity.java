@@ -4,28 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.damian.builditbigger.backend.myApi.MyApi;
 import com.damian.freshjokes.FreshJoke;
 import com.damian.jokedisplay.JokeActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
-import java.io.IOException;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.GCECallback {
     private static String TAG = MainActivity.class.getSimpleName();
     private static String TEST_DEVICE_ID_AD_MOB = "7FDA1E82084FB2DA81E38E52B97C7981";
 
@@ -77,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
         mJokeTextView.setText(new FreshJoke().chuckNorris()); // kill them with jokes!
     }
 
+    @Override
+    public void onPostExecute(String result) {
+        startJokeActivity(result);
+    }
+
+
+    private void startJokeActivity(String joke) {
+        Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra(JokeActivity.JOKE_KEY, joke);
+        startActivity(intent);
+    }
+
     /**
      * Checks to ensure the user can connect to the network,
      * as per Google's Android Developer guidelines.
@@ -93,50 +96,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return isAvailable;
     }
-
-    private void startJokeActivity(String joke) {
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra(JokeActivity.JOKE_KEY, joke);
-        startActivity(intent);
-    }
-
-    class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
-        private String TAG = getClass().getSimpleName();
-        private MyApi myApiService = null;
-        private Context context;
-
-        @Override
-        protected String doInBackground(Context... params) {
-            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
-                    new AndroidJsonFactory(), null)
-                    // options for running against local devappserver
-                    // - 10.0.2.2 is localhost's IP address in Android emulator
-                    // - turn off compression when running against local devappserver
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
-                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                        @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
-                            abstractGoogleClientRequest.setDisableGZipContent(true);
-                        }
-                    });
-            // end options for devappserver
-
-            myApiService = builder.build();
-
-            context = params[0];
-
-            try {
-                return myApiService.getJoke().execute().getData();
-            } catch (IOException e) {
-                Log.e(TAG, "Error while trying to get GCE API service response");
-                return new FreshJoke().chuckNorris(); // retrieve the joke locally in case of network failure
-            }
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            startJokeActivity(result);
-        }
-    }
-
 }
