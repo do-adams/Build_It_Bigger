@@ -13,7 +13,7 @@ I built this project as a requirement for completing the [Gradle for Android and
 
 #Getting Started
 
-To begin running this project, you will definitely want to follow the steps in Google's [Ad Mob documentation](https://firebase.google.com/docs/admob/android/quick-start). 
+To begin running this project, you will definitely want to follow the steps in Google's Ad Mob [documentation](https://firebase.google.com/docs/admob/android/quick-start). 
 
 Firstly, you will need three different 'google-services.json' files for the main, free, and paid versions of the app (all of which have different package names), which must be placed in the root of the app, free, and paid directories.
 
